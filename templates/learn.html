@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TALE Learning Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/static/learn.css">
+</head>
+<body>
+  <header class="lc-nav">
+    <div class="nav-left">
+      <a class="brand" href="/">
+        <span class="brand-dot"></span>
+        <div class="brand-text">
+          <span class="brand-name">TALE</span>
+          <span class="brand-sub">Learning Center</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="/">IDE</a>
+        <a class="active" href="/learn">📘 Learn TALE</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <span class="nav-hint">Friendly lessons for absolute beginners</span>
+      <a class="nav-cta" href="/">Open IDE</a>
+    </div>
+  </header>
+
+  <main class="lc-shell">
+    <aside class="toc" aria-label="Course navigation">
+      <div class="toc-inner">
+        <div class="toc-header">
+          <p class="eyebrow">Course map</p>
+          <h3>12 bite-sized lessons</h3>
+        </div>
+        <ol>
+          <li><a href="#what-is">1. What is TALE</a></li>
+          <li><a href="#say">2. Talking to the computer</a></li>
+          <li><a href="#variables">3. Storing information</a></li>
+          <li><a href="#input">4. Getting input</a></li>
+          <li><a href="#math">5. Math operations</a></li>
+          <li><a href="#decisions">6. Decisions</a></li>
+          <li><a href="#loops">7. Repeating actions</a></li>
+          <li><a href="#strings">8. Working with text</a></li>
+          <li><a href="#lists">9. Working with lists</a></li>
+          <li><a href="#functions">10. Functions</a></li>
+          <li><a href="#errors">11. Errors</a></li>
+          <li><a href="#projects">12. Small real projects</a></li>
+        </ol>
+      </div>
+    </aside>
+
+    <section class="content" aria-label="Lesson content">
+      <section class="page-hero">
+        <p class="eyebrow">Start here</p>
+        <h1>Learn TALE from zero to tiny projects</h1>
+        <p class="lede">Read, copy, and run every example right here. No setup, no stress. Each lesson is short, friendly, and written for someone who has never coded before.</p>
+        <div class="hero-actions">
+          <a class="nav-cta" href="/">Jump to IDE</a>
+          <button class="ghost" id="expand-all" type="button">Expand all</button>
+        </div>
+        <div class="progress-card">
+          <div class="progress-meta">
+            <p class="eyebrow">Your progress</p>
+            <h3 id="progress-count">0 / 12 lessons done</h3>
+            <p class="small">Mark each lesson as you finish reading or trying the code.</p>
+          </div>
+          <div class="progress-rail" aria-label="Course progress">
+            <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+          </div>
+          <div class="progress-foot">
+            <span id="progress-percent">0%</span>
+            <span class="progress-tip">Your progress saves in this browser.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="what-is" class="lesson" data-lesson-id="what-is">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 1</p>
+            <h2>What is TALE</h2>
+            <p class="summary">TALE is a small language that reads like friendly English. You can tell the computer exactly what to do using words you already know.</p>
+            <div class="lesson-meta">
+              <span class="chip">Story-like commands</span>
+              <span class="chip">Beginner friendly</span>
+              <span class="chip chip-soft" data-lesson-status="what-is">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="what-is">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout tip">
+            <strong>Analogy:</strong> Think of TALE as giving clear steps to a helpful robot friend. If you say it, the robot does it.
+          </div>
+          <p>You write simple lines. The computer follows them in order. Blocks that belong together are indented and end with the word <code>end</code>.</p>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Try it</p>
+                <h4>Hello, world</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>say "Hello, traveler!"
+say "TALE reads like a story."</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="say" class="lesson" data-lesson-id="say">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 2</p>
+            <h2>Talking to the computer: say</h2>
+            <p class="summary">The <code>say</code> command asks the computer to speak back to you.</p>
+            <div class="lesson-meta">
+              <span class="chip">Print messages</span>
+              <span class="chip chip-soft" data-lesson-status="say">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="say">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout note">
+            <strong>Tip:</strong> Use quotes around text. You can say more than one thing at once by separating items with commas.
+          </div>
+          <div class="example-grid">
+            <div class="example-card" data-inputs="[]">
+              <div class="example-header">
+                <div>
+                  <p class="example-label">Speak</p>
+                  <h4>Basic messages</h4>
+                </div>
+                <div class="example-actions">
+                  <button class="ghost example-copy" type="button">Copy</button>
+                  <button class="primary example-run" type="button">Run</button>
+                </div>
+              </div>
+              <pre class="code-block"><code>say "Hi there!"
+say "TALE says exactly what you write."</code></pre>
+              <div class="example-output" aria-live="polite"></div>
+            </div>
+            <div class="example-card" data-inputs="[]">
+              <div class="example-header">
+                <div>
+                  <p class="example-label">Combine</p>
+                  <h4>Say many things</h4>
+                </div>
+                <div class="example-actions">
+                  <button class="ghost example-copy" type="button">Copy</button>
+                  <button class="primary example-run" type="button">Run</button>
+                </div>
+              </div>
+              <pre class="code-block"><code>say "Score:", 10, "points"
+say "You can mix text and numbers."</code></pre>
+              <div class="example-output" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="variables" class="lesson" data-lesson-id="variables">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 3</p>
+            <h2>Storing information: variables</h2>
+            <p class="summary">A variable is like a labeled box where you keep something for later.</p>
+            <div class="lesson-meta">
+              <span class="chip">Keep values</span>
+              <span class="chip chip-soft" data-lesson-status="variables">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="variables">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout tip">
+            <strong>Analogy:</strong> Write a name on a box, drop an item inside, and grab it whenever you need it.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Store</p>
+                <h4>Name tag</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>name is "Ava"
+pet is "cat"
+say "Name tag:"
+say name + " loves a " + pet</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="input" class="lesson" data-lesson-id="input">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 4</p>
+            <h2>Getting input from the user</h2>
+            <p class="summary">Use <code>ask</code> when you want the person using your program to type something.</p>
+            <div class="lesson-meta">
+              <span class="chip">ask for data</span>
+              <span class="chip chip-soft" data-lesson-status="input">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="input">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout warning">
+            <strong>Note:</strong> In this tutorial the Run button feeds example answers for you. In the IDE you can type your own.
+          </div>
+          <div class="example-card" data-inputs='["Sam","blue"]'>
+            <div class="example-header">
+              <div>
+                <p class="example-label">Chat</p>
+                <h4>Greet the user</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>ask name
+say "Hi " + name + "!"
+ask color
+say "You chose " + color</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="math" class="lesson" data-lesson-id="math">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 5</p>
+            <h2>Math operations</h2>
+            <p class="summary">Use TALE like a calculator: add, subtract, multiply, and divide.</p>
+            <div class="lesson-meta">
+              <span class="chip">+ - * /</span>
+              <span class="chip chip-soft" data-lesson-status="math">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="math">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout tip">
+            <strong>Analogy:</strong> Like measuring a room: write numbers, do a quick calculation, and announce the result.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Calculate</p>
+                <h4>Area of a rectangle</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>width is 4
+height is 3
+area is width * height
+say "Area is " + area</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="decisions" class="lesson" data-lesson-id="decisions">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 6</p>
+            <h2>Decisions: if and else</h2>
+            <p class="summary">Tell the computer to choose between paths.</p>
+            <div class="lesson-meta">
+              <span class="chip">if / else</span>
+              <span class="chip chip-soft" data-lesson-status="decisions">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="decisions">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout note">
+            <strong>Real life:</strong> If it is raining, grab a coat. Otherwise, enjoy the breeze.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Choose</p>
+                <h4>Age check</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>age is 15
+if age >= 16
+  say "You can learn to drive."
+else
+  say "Keep practicing bikes first!"
+end</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="loops" class="lesson" data-lesson-id="loops">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 7</p>
+            <h2>Repeating actions: loops</h2>
+            <p class="summary">Loops repeat steps so you do not write them again and again.</p>
+            <div class="lesson-meta">
+              <span class="chip">repeat</span>
+              <span class="chip">while</span>
+              <span class="chip chip-soft" data-lesson-status="loops">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="loops">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout tip">
+            <strong>Analogy:</strong> Imagine clapping three times: the same motion repeated. That is a loop.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Repeat</p>
+                <h4>Count down</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>repeat 3
+  say "Clap!"
+end
+
+count is 5
+while count > 0
+  say count
+  add -1 to count
+end
+say "Blast off!"</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="strings" class="lesson" data-lesson-id="strings">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 8</p>
+            <h2>Working with text (strings)</h2>
+            <p class="summary">Change text with helpers like <code>upper</code>, <code>lower</code>, and <code>strip</code>.</p>
+            <div class="lesson-meta">
+              <span class="chip">upper</span>
+              <span class="chip">strip</span>
+              <span class="chip chip-soft" data-lesson-status="strings">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="strings">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout note">
+            <strong>Tip:</strong> <code>strip</code> trims spaces, <code>upper</code> shouts in capitals, and <code>lower</code> whispers in lowercase.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Transform</p>
+                <h4>Clean up text</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>title is " tale language "
+trimmed is strip title
+shout is upper trimmed
+say "Trimmed:" + trimmed
+say "Shout:" + shout</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lists" class="lesson" data-lesson-id="lists">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 9</p>
+            <h2>Working with lists</h2>
+            <p class="summary">Lists keep many items in order.</p>
+            <div class="lesson-meta">
+              <span class="chip">add items</span>
+              <span class="chip">for each</span>
+              <span class="chip chip-soft" data-lesson-status="lists">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="lists">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout tip">
+            <strong>Analogy:</strong> A shopping list. You can add, check, and read every item.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Collect</p>
+                <h4>Simple list</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>list tasks is ["pack", "snacks"]
+add "water" to tasks
+for each item in tasks
+  say "- " + item
+end</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="functions" class="lesson" data-lesson-id="functions">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 10</p>
+            <h2>Functions</h2>
+            <p class="summary">Bundle steps into a reusable action you can call anytime.</p>
+            <div class="lesson-meta">
+              <span class="chip">function</span>
+              <span class="chip">reuse code</span>
+              <span class="chip chip-soft" data-lesson-status="functions">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="functions">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout note">
+            <strong>Analogy:</strong> A recipe card. Once written, you can cook the same dish many times.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Reuse</p>
+                <h4>Cheer function</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>function cheer name times
+  repeat times
+    say "You can do it, " + name + "!"
+  end
+end
+
+cheer "Sky" 2</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="errors" class="lesson" data-lesson-id="errors">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 11</p>
+            <h2>Errors and understanding mistakes</h2>
+            <p class="summary">Mistakes happen. TALE lets you catch them so your program does not crash.</p>
+            <div class="lesson-meta">
+              <span class="chip">try / catch</span>
+              <span class="chip chip-soft" data-lesson-status="errors">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="errors">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout warning">
+            <strong>Remember:</strong> When something breaks, read the message. It tells you what went wrong and where.
+          </div>
+          <div class="example-card" data-inputs="[]">
+            <div class="example-header">
+              <div>
+                <p class="example-label">Handle</p>
+                <h4>Catch a crash</h4>
+              </div>
+              <div class="example-actions">
+                <button class="ghost example-copy" type="button">Copy</button>
+                <button class="primary example-run" type="button">Run</button>
+              </div>
+            </div>
+            <pre class="code-block"><code>try
+  total is 10 / 0
+  say total
+catch problem
+  say "Oops: " + text(problem)
+finally
+  say "We keep going anyway."
+end</code></pre>
+            <div class="example-output" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="lesson" data-lesson-id="projects">
+        <div class="lesson-head">
+          <div>
+            <p class="eyebrow">Lesson 12</p>
+            <h2>Small real projects</h2>
+            <p class="summary">Put everything together in tiny programs you can build today.</p>
+            <div class="lesson-meta">
+              <span class="chip">projects</span>
+              <span class="chip chip-soft" data-lesson-status="projects">Not done yet</span>
+            </div>
+          </div>
+          <div class="lesson-actions">
+            <button class="ghost collapse-btn" type="button">Collapse</button>
+            <button class="primary mark-done" type="button" data-lesson="projects">Mark done</button>
+          </div>
+        </div>
+        <div class="lesson-body">
+          <div class="callout tip">
+            <strong>Plan first:</strong> Describe the steps in plain words, then translate them to TALE lines.
+          </div>
+          <div class="example-grid">
+            <div class="example-card" data-inputs='["25"]'>
+              <div class="example-header">
+                <div>
+                  <p class="example-label">Project</p>
+                  <h4>Temperature helper</h4>
+                </div>
+                <div class="example-actions">
+                  <button class="ghost example-copy" type="button">Copy</button>
+                  <button class="primary example-run" type="button">Run</button>
+                </div>
+              </div>
+              <pre class="code-block"><code>say "Enter temperature in C"
+ask celsius
+f is (number(celsius) * 9 / 5) + 32
+say "That is " + f + " F"</code></pre>
+              <div class="example-output" aria-live="polite"></div>
+            </div>
+            <div class="example-card" data-inputs='["7"]'>
+              <div class="example-header">
+                <div>
+                  <p class="example-label">Project</p>
+                  <h4>Guess the number</h4>
+                </div>
+                <div class="example-actions">
+                  <button class="ghost example-copy" type="button">Copy</button>
+                  <button class="primary example-run" type="button">Run</button>
+                </div>
+              </div>
+              <pre class="code-block"><code>secret is 7
+say "Guess a number 1-10"
+ask guess
+if number(guess) is same as secret
+  say "You got it!"
+else
+  say "Close! The answer was " + secret
+end</code></pre>
+              <div class="example-output" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/static/learn.js"></script>
+</body>
+</html>

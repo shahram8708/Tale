@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TALE IDE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/theme.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="ide-shell">
+    <header class="top-bar">
+      <div class="brand">
+        <div class="dot"></div>
+        <div class="titles">
+          <span class="title">TALE IDE</span>
+        </div>
+      </div>
+      <div class="bar-middle">
+        <span id="status-pill" class="status-pill idle">Idle</span>
+        <span class="hint">F2: Prompt • F8: Submit • ESC: Cancel • F5: Run • Ctrl+Enter: Run Selection</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-sm btn-outline-light me-2 nav-learn" href="/learn" title="Learn TALE">
+          <span aria-hidden="true">📘</span>
+        </a>
+        <button id="wrap-toggle" class="btn btn-sm btn-outline-light me-2 icon-btn" type="button" title="Toggle word wrap">
+          <i class="bi bi-text-wrap" aria-hidden="true"></i>
+          <span class="visually-hidden">Toggle wrap</span>
+        </button>
+        <label class="font-slider">
+          <span>Font</span>
+          <input id="font-slider" type="range" min="12" max="22" value="15">
+        </label>
+        <button id="example-show" class="btn btn-sm btn-outline-light ms-2 icon-btn" type="button" style="display:none;" title="Show examples">
+          <i class="bi bi-journal-code" aria-hidden="true"></i>
+          <span class="visually-hidden">Show examples</span>
+        </button>
+        <button id="terminal-on" class="btn btn-sm btn-outline-light ms-2 icon-btn" type="button" style="display:none;" title="Show terminal">
+          <i class="bi bi-terminal" aria-hidden="true"></i>
+          <span class="visually-hidden">Show terminal</span>
+        </button>
+        <button id="run-btn" class="btn btn-primary ms-3 icon-btn" type="button" title="Run (F5)">
+          <i class="bi bi-play-fill" aria-hidden="true"></i>
+          <span class="visually-hidden">Run</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="main-stack">
+      <div class="workspace-shell">
+        <main class="workspace">
+          <section class="editor-pane">
+            <div id="editor" aria-label="TALE code editor"></div>
+          </section>
+          <div class="divider vertical" data-divider="vertical" aria-label="Resize editor"></div>
+          <aside class="side-pane">
+            <div class="panel example-panel">
+              <div class="panel-header">
+                <span>Quick examples</span>
+                <div class="d-flex gap-2">
+                  <button id="example-hide" class="btn btn-sm btn-outline-light icon-btn" type="button" title="Hide examples">
+                    <i class="bi bi-eye-slash" aria-hidden="true"></i>
+                    <span class="visually-hidden">Hide examples</span>
+                  </button>
+                  <button id="insert-example" class="btn btn-sm btn-outline-light icon-btn" type="button" title="Insert example">
+                    <i class="bi bi-upload" aria-hidden="true"></i>
+                    <span class="visually-hidden">Insert example</span>
+                  </button>
+                </div>
+              </div>
+              <pre class="example" aria-label="Example code">x is 3
+if x > 2
+  say "big"
+else
+  say "small"
+end
+repeat 3
+  say "hi"
+end
+function greet name
+  say "Hello " + name
+end</pre>
+            </div>
+          </aside>
+        </main>
+      </div>
+
+      <div class="divider horizontal" data-divider="horizontal" aria-label="Resize terminal"></div>
+
+      <section class="terminal-pane">
+        <div class="terminal-header">
+          <span>Terminal</span>
+          <div class="terminal-controls">
+            <span class="hint">stdout is white · errors are red · input prompts are yellow</span>
+            <button id="terminal-off" class="btn btn-sm btn-outline-light ms-2 icon-btn" type="button" title="Hide terminal">
+              <i class="bi bi-eye-slash" aria-hidden="true"></i>
+              <span class="visually-hidden">Hide terminal</span>
+            </button>
+            <button id="terminal-clear" class="btn btn-sm btn-outline-light ms-2 icon-btn" type="button" title="Clear terminal">
+              <i class="bi bi-trash" aria-hidden="true"></i>
+              <span class="visually-hidden">Clear terminal</span>
+            </button>
+          </div>
+        </div>
+        <div id="terminal" class="terminal" aria-live="polite"></div>
+      </section>
+    </div>
+  </div>
+
+  <div id="spinner-overlay" class="spinner-overlay" aria-live="polite" aria-hidden="true" role="status">
+    <div class="spinner-card">
+      <div class="spinner-orbit">
+        <span class="orbit-dot"></span>
+        <span class="orbit-ring"></span>
+        <span class="orbit-arc"></span>
+      </div>
+      <p class="spinner-text">Crafting your TALE...</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.TALE_BOOTSTRAP = {
+      sample: `name is "Alex"
+say "Hello " + name
+x is 5
+while x < 8
+  say x
+  add 1 to x
+end
+repeat 2
+  say "done"
+end`,
+    };
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+  <script src="/static/editor.js"></script>
+</body>
+</html>
